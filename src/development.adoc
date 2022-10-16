@@ -1,16 +1,30 @@
 == Development
 
-organizing repository
+=== Organizing repositories
 
-ongoing quality assurance
+Per product and/or per development organization
 
-de-central development
+=== ongoing quality assurance
 
-vendoring in open source
+abaplint.app and code review guide
 
-reducing footprint into SAP
+=== de-central development
 
-final quality assurance and delivery
+central development / de-central SAP / open-abap
+
+central development: setup automatic push per developer
+
+=== vendoring in open source
+
+duplicate code with automatic renaming
+
+=== reducing footprint into SAP
+
+abaplint app
+
+=== final quality assurance and delivery
+
+full slow test in real systems
 
 === Distribution
 transports vs abapGit

@@ -12,3 +12,5 @@
 
 == Introduction
 todo
+
+product development setup not using link:https://help.sap.com/docs/SAP_ADD-ON_ASSEMBLY_KIT[SAP AAK]
