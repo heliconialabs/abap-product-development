@@ -1,3 +1,16 @@
 == Development
 
-todo
+organizing repository
+
+ongoing quality assurance
+
+de-central development
+
+vendoring in open source
+
+reducing footprint into SAP
+
+final quality assurance and delivery
+
+=== Distribution
+transports vs abapGit
