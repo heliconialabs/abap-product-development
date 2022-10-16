@@ -1,0 +1,10 @@
+:plantuml-server-url: https://www.plantuml.com/plantuml
+:source-highlighter: rouge
+
+= ABAP Product Development
+Lars Hvam, Heliconia Labs, October 2022
+:numbered:
+
+include::introduction.adoc[]
+
+include::development.adoc[]
