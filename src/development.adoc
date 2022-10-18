@@ -78,7 +78,9 @@ https://blogs.sap.com/2021/04/20/automagic-standalone-renaming-of-abap-objects/
 
 === Reducing footprint into SAP
 
-abaplint app void types
+abaplint.app void types
+
+void types notification via abaplint.app
 
 steampunk compatibility
 
@@ -97,3 +99,7 @@ versioning/tagging?
 === Customer Adjustments
 
 Put code back to git in branches
+
+provide enhancements if necessary to change the ABAP logic in customer system
+
+including customizing
