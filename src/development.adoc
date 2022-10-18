@@ -2,29 +2,98 @@
 
 === Organizing repositories
 
-Per product and/or per development organization
+Organize git repositories according to link:https://en.wikipedia.org/wiki/Conway%27s_law[Conway's Law] and which product options are provided to customers. Cross repository syntax checks are performed in the pull request process.
 
-=== ongoing quality assurance
+=== Example 1
+
+Two separately deployed products, one common library
+
+image::./img/orga1.drawio.svg[]
+
+During packaging, two separately installable artifacts are generated.
+
+Note that the library must be <<_duplicating_code,duplicated>> into each product package.
+
+=== Example 2
+
+One product, two teams with separate responsibilities
+
+image::./img/orga2.drawio.svg[]
+
+=== Quality assurance
 
 abaplint.app and code review guide
 
-=== de-central development
+https://github.com/SAP/styleguides/releases/download/latest/abap-code-review-guide.pdf
+
+=> use abaplint to check target language syntax
+
+=== Development setups
 
 central development / de-central SAP / open-abap
 
+==== Central Development
+
+one working copy shared by all developers in one system, a single syntax error can impact all developers building and testing in the system
+
 central development: setup automatic push per developer
 
-=== vendoring in open source
+Central development system cannot be replaced/decommissioned in any setup?
+
+==== De-central Development
+
+allows branching
+
+=> Nuve
+
+==== transpiler / open-abap
+
+cheap branching, but developer heavy
+
+real systems required for final quality gate
+
+==== Summary
+
+[cols="1,1"]
+|===
+|Setup |Cons
+
+|Central development
+|Single working copy
+
+|De-central development
+|Extra infrastructure
+
+|transpiler / open-abap
+|Extra development effort
+|===
+
+=== Duplicating code
+
+https://macwright.com/2021/03/11/vendor-by-default.html
 
 duplicate code with automatic renaming
 
-=== reducing footprint into SAP
+https://blogs.sap.com/2021/04/20/automagic-standalone-renaming-of-abap-objects/
 
-abaplint app
+=== Reducing footprint into SAP
 
-=== final quality assurance and delivery
+abaplint app void types
 
-full slow test in real systems
+steampunk compatibility
 
-=== Distribution
+=== Quality gate
+
+Before packaging and distribution, perform a full system test
+
+Including slow test in real systems => Nuve
+
+=== Packaging & Distribution
+
 transports vs abapGit
+
+versioning/tagging?
+
+=== Customer Adjustments
+
+Put code back to git in branches

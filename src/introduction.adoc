@@ -13,4 +13,8 @@
 == Introduction
 todo
 
+Classic ABAP on-prem development
+
+Assumption: git, why?
+
 product development setup not using link:https://help.sap.com/docs/SAP_ADD-ON_ASSEMBLY_KIT[SAP AAK]
