@@ -92,9 +92,23 @@ Including slow test in real systems => Nuve
 
 === Packaging & Distribution
 
-transports vs abapGit
+The product can be delivered to customers using classic transports or via link:https://abapgit.org[abapGit] ZIP files.
 
-versioning/tagging?
+abapGit can be used from 7.02 and up, including Steampunk and S/4 HANA Cloud. The customer has full transparency into all changes before performing the import, code review can be done incrementally for each release by the customer. A developer can perform the upload via frontend PC.
+
+Transport files are placed on the application server and imported via classic STMS, note the restrictions if generating transports on different releases than the customer system, link:https://launchpad.support.sap.com/#/notes/1090842[1090842 - Composite SAP Note: Cross-release transports]. The customer cannot review the changes before import, and it requires access to the application server file system to save the transport files.
+
+Note that product development can be done with abapGit, and still employ classic transports for distribution.
+
+=== Versioning/tagging
+
+Everything that is sent to a customer should be tagged in git, this way it is possible to track and reproduce errors locally instead of requiring access to customer systems.
+
+For table contents, customizing and master data, use the abapGit data feature to push the database contents to git.
+
+In case a hotfix is needed for a customer, a branch can be made from the tag, if the customer cannot upgrade to the latest version.
+
+Use a versioning scheme like link:https://semver.org[Semantic Versioning] for the gags.
 
 === Customer Adjustments
 
