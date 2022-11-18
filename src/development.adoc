@@ -112,8 +112,8 @@ Use a versioning scheme like link:https://semver.org[Semantic Versioning] for th
 
 === Customer Adjustments
 
-Put code back to git in branches
+After installation at a customer, the product might need additional adjustments and customizing.
 
-provide enhancements if necessary to change the ABAP logic in customer system
+Put all all customer adjustments back to git, possibly a repository for each customer, depending on the actual content.
 
-including customizing
+Do not adjust the product code in the customer system, instead provide the customer with a new release(triggering new versioning), or alternatively provide enhancement points in the product for customer-specific adjustments in customer namespace.
