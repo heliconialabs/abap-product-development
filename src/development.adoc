@@ -112,7 +112,7 @@ Use a versioning scheme like link:https://semver.org[Semantic Versioning] for th
 
 === Customer Adjustments
 
-After installation at a customer, the product might need additional adjustments and customizing.
+After installation at a customer, the product might need additional adjustments and customizing by the vendor.
 
 Put all all customer adjustments back to git, possibly a repository for each customer, depending on the actual content.
 
