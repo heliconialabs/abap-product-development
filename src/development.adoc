@@ -1,8 +1,10 @@
 == Development
 
+During product development, multiple choices must be made for how to organize and setup processes for the development, the below sections touch upon various development aspects.
+
 === Organizing repositories
 
-Organize git repositories according to link:https://en.wikipedia.org/wiki/Conway%27s_law[Conway's Law] and which product options are provided to customers. Cross repository syntax checks are performed in the pull request process.
+Organize git repositories according to link:https://en.wikipedia.org/wiki/Conway%27s_law[Conway's Law] and which product options are provided to customers. Cross repository syntax checks are performed in the pull request process using link:https://abaplint.app[abaplint].
 
 === Example 1
 
@@ -22,11 +24,15 @@ image::./img/orga2.drawio.svg[]
 
 === Quality assurance
 
-abaplint.app and code review guide
+All code is managed in git, all changes are reviewed by peers.
 
-https://github.com/SAP/styleguides/releases/download/latest/abap-code-review-guide.pdf
+Check the link:https://github.com/SAP/styleguides/releases/download/latest/abap-code-review-guide.pdf[ABAP code review guide] for possible setups.
 
-=> use abaplint to check target language syntax
+Static analysis is automatically triggered for each link:https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests[pull request], link:https://abaplint.app[abaplint] performs checks according to the team development guidelines.
+
+If the product is developed in SAP BASIS systems higher than the target release, abaplint can help checking the syntax validity of the target language syntax.
+
+Unit tests can be triggered in the pull request using link:https://nuveplatform.com/[Nuve Platform] or using link:https://open-abap.org/[open-abap].
 
 === Development setups
 
@@ -86,9 +92,9 @@ steampunk compatibility
 
 === Quality gate
 
-Before packaging and distribution, perform a full system test
+Before packaging and distribution, perform a full system test for each target platform.
 
-Including slow test in real systems => Nuve
+link:https://nuveplatform.com/[Nuve Platform] allows easily spinning up different SAP releases for testing.
 
 === Packaging & Distribution
 

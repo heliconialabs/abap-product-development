@@ -2,7 +2,7 @@
 :source-highlighter: highlightjs
 
 = ABAP Product Development
-Lars Hvam, Heliconia Labs, October 2022
+Lars Hvam, Heliconia Labs, December 2022
 :numbered:
 
 include::introduction.adoc[]

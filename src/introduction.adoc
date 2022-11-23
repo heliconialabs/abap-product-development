@@ -11,12 +11,11 @@
 |===
 
 == Introduction
-todo
 
-Classic ABAP on-prem development
+Additional functionality can be delivered to SAP systems via extensions. SAP partners typically develop these extensions and provide these to end customers.
 
-Assumption: git, why?
+ABAP extension development typically follows a release schedule with few releases each year. This whitepaper focuses on classic on-premise extension/product development.
 
-cycled releases
+Professional product development use central versioning like link:https://git-scm.com/[git], in the ABAP world the link:https://abapgit.org[abapGit] client can be used to connect the ABAP and git worlds.
 
-product development setup not using link:https://help.sap.com/docs/SAP_ADD-ON_ASSEMBLY_KIT[SAP AAK]
+It is possible to use the link:https://help.sap.com/docs/SAP_ADD-ON_ASSEMBLY_KIT[SAP Add-On Assembly Kit] for product development, however its not a prerequisite.
