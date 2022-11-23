@@ -36,27 +36,27 @@ Unit tests can be triggered in the pull request using link:https://nuveplatform.
 
 === Development setups
 
-central development / de-central SAP / open-abap
+The development landscape can be organized in various ways, a final setup will typically be a mashup of both central and de-central development.
 
 ==== Central Development
 
-one working copy shared by all developers in one system, a single syntax error can impact all developers building and testing in the system
+One working copy shared by all developers in one system, a single syntax error can impact all developers building and testing in the system
 
-central development: setup automatic push per developer
+Automatic push to a branch in GitHub can be setup so developers does not have to dig into using git.
 
-Central development system cannot be replaced/decommissioned in any setup?
+Note that a central system will always be required, to perform final testing and packaging.
 
 ==== De-central Development
 
-allows branching
-
-=> Nuve
+Via link:https://nuveplatform.com/[Nuve Platform] developers can instantiate additional systems, allowing for each branching and testing.
 
 ==== transpiler / open-abap
 
-cheap branching, but developer heavy
+Alternatively, ABAP can be transpiled to JavaScript, allowing code to run on local developer machines or vanilla github actions.
 
-real systems required for final quality gate
+This allows for easy branching, but is developer heavy, as all dependencies must be scaffolded.
+
+Note that this does not replace real systems, which are required for final quality assurance.
 
 ==== Summary
 
@@ -76,19 +76,18 @@ real systems required for final quality gate
 
 === Duplicating code
 
-https://macwright.com/2021/03/11/vendor-by-default.html
+If utilizing open or inner source libraries, duplicate objects to stay in control of the dependency. Automatic setups for updating the libraries is recommended.
 
-duplicate code with automatic renaming
-
-https://blogs.sap.com/2021/04/20/automagic-standalone-renaming-of-abap-objects/
+* link:https://macwright.com/2021/03/11/vendor-by-default.html[Vendor by default]
+* link:https://blogs.sap.com/2021/04/20/automagic-standalone-renaming-of-abap-objects/[Automagic standalone renaming of ABAP objects]
 
 === Reducing footprint into SAP
 
-abaplint.app void types
+By reducing the footprint into SAP, eg. reusing of data elements. The product will become more stable, and easier to debug. If a dependency is the real semantic dependency, keep the SAP standard reference.
 
-void types notification via abaplint.app
+link:https://abaplint.app[abaplint] will list the unknown void types, plus provide observations in the pull requests when a developer adds new dependencies.
 
-steampunk compatibility
+link:https://abapedia.org[abapedia.org] helps identifying which objects are marked as released in the latest Steampunk release.
 
 === Quality gate
 
